@@ -139,15 +139,15 @@
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SukeBan.Translator.Core\SukeBanTranslator.Core.csproj">
+    <ProjectReference Include="..\SukeBanTranslator.Core\SukeBanTranslator.Core.csproj">
       <Project>{de7d76cf-498e-44da-be01-fb2f06a52cb3}</Project>
       <Name>SukeBanTranslator.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SukeBan.Translator.Theme\SukeBanTranslator.Theme.csproj">
+    <ProjectReference Include="..\SukeBanTranslator.Theme\SukeBanTranslator.Theme.csproj">
       <Project>{7992b738-2837-4398-b92f-104c534d52c2}</Project>
       <Name>SukeBanTranslator.Theme</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SukeBan.Translator.UI\SukeBanTranslator.UI.csproj">
+    <ProjectReference Include="..\SukeBanTranslator.UI\SukeBanTranslator.UI.csproj">
       <Project>{db389116-9864-4bdc-980e-cd78bed4ac1f}</Project>
       <Name>SukeBanTranslator.UI</Name>
     </ProjectReference>
