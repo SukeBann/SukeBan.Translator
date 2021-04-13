@@ -48,6 +48,11 @@
     <Compile Include="Models\Internals\TranslatorEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SukeBanTranslator.Core\SukeBanTranslator.Core.csproj">
+      <Project>{de7d76cf-498e-44da-be01-fb2f06a52cb3}</Project>
+      <Name>SukeBanTranslator.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

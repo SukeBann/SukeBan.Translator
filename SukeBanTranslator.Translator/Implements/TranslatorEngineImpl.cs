@@ -1,9 +1,12 @@
 ﻿using System.ComponentModel.Composition;
 using SukeBanTranslator.Core;
-using SukeBanTranslator.Translator.Models.Internals;
+using SukeBanTranslator.Models.Internals;
 
-namespace SukeBanTranslator.Translator
-{   
+namespace SukeBanTranslator
+{       
+    /// <summary>
+    /// 翻译器引擎的核心实现
+    /// </summary>
     [Export(typeof(ITranslatorEngine))]
     class TranslatorEngineImpl:ITranslatorEngine
     {

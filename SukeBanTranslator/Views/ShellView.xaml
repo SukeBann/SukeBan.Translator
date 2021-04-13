@@ -1,0 +1,19 @@
+﻿<pu:WindowX x:Class="SukeBanTranslator.Views.ShellView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+            mc:Ignorable="d"
+            Title="ShellView"
+            Height="450"
+            Width="800"
+            Style="{DynamicResource ShellWindowXStyle}"
+            WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Content="Name" 
+                Width="100" 
+                Height="40"
+                Style="{DynamicResource ThemedSolidButtonStyle}"/>
+    </Grid>
+</pu:WindowX>

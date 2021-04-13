@@ -1,6 +1,6 @@
 ﻿using SukeBanTranslator.Core;
 
-namespace SukeBanTranslator.Translator
+namespace SukeBanTranslator
 {
     /// <summary>
     /// 定义翻译器的核心接口

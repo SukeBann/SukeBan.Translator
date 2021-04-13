@@ -1,7 +1,7 @@
 ﻿using System;
 using SukeBanTranslator.Core;
 
-namespace SukeBanTranslator.Translator.Models.Internals
+namespace SukeBanTranslator.Models.Internals
 {   
     /// <summary>
     /// 翻译器的实体,提供翻译功能的实现
