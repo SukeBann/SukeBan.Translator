@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Runtime.InteropServices.ComTypes;
 
 namespace SukeBanTranslator.Log
-{   
+{
     /// <summary>
     /// 提供日志的本地文件存储功能
     /// </summary>
@@ -61,7 +60,6 @@ namespace SukeBanTranslator.Log
         /// <param name="messageTemplate">消息的格式化字符串，参考Serilog的使用文档。</param>
         /// <param name="args">消息格式化字符串使用的参数。</param>
         void Warning(Exception exception, string messageTemplate, params object[] args);
-
 
         /// <summary>
         /// 记录一条错误级别的日志消息。

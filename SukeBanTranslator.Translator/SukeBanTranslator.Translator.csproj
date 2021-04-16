@@ -45,7 +45,7 @@
     <Compile Include="Constractrs\ITranslator.cs" />
     <Compile Include="Constractrs\ITranslatorEngine.cs" />
     <Compile Include="Implements\TranslatorEngineImpl.cs" />
-    <Compile Include="Models\Internals\TranslatorEntity.cs" />
+    <Compile Include="Models\BaiduTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +53,13 @@
       <Project>{de7d76cf-498e-44da-be01-fb2f06a52cb3}</Project>
       <Name>SukeBanTranslator.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SukeBanTranslator.Shared\SukeBanTranslator.Shared.csproj">
+      <Project>{d34c1081-b07b-450d-9b64-489d7310feee}</Project>
+      <Name>SukeBanTranslator.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Abstracts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

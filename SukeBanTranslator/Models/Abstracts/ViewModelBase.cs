@@ -1,10 +1,9 @@
 ﻿using Caliburn.Micro;
-using SukeBanTranslator;
 using SukeBanTranslator.Log;
 
 namespace SukeBanTranslator.Models
 {
-    public abstract class ViewModelBase : Screen,IViewModel
+    public abstract class ViewModelBase : Conductor<ISubViewModel>.Collection.OneActive, IViewModel
     {
         #region Properties
 
@@ -23,6 +22,6 @@ namespace SukeBanTranslator.Models
         /// </summary>
         public ILogger Logger => IoC.Get<ILogger>();
 
-        #endregion
+        #endregion Properties
     }
 }

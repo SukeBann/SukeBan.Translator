@@ -16,6 +16,4 @@
 
     <SolidColorBrush x:Key="ForegroundBrush_100"
                      Color="{StaticResource ForegroundColor}" />
-
-
 </ResourceDictionary>

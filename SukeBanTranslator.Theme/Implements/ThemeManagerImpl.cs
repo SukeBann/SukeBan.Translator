@@ -1,18 +1,13 @@
-﻿using System;
+﻿using SukeBanTranslator.Core;
+using System;
 using System.ComponentModel.Composition;
-using System.Net.Mime;
 using System.Windows;
-using SukeBanTranslator.Theme;
-using SukeBanTranslator.Core;
 
 namespace SukeBanTranslator.Theme.Implements
-{   
+{
     [Export(typeof(IThemeManager))]
-    class ThemeManagerImpl:IThemeManager
+    internal class ThemeManagerImpl : IThemeManager
     {
-        #region Fields
-        #endregion
-
         #region Method
 
         public void ChangeTheme(PresetTheme theme)
@@ -34,6 +29,7 @@ namespace SukeBanTranslator.Theme.Implements
                 Source = new Uri($"pack://application:,,,//SukeBanTranslator.Theme;component/Themes/{theme}.xaml")
             });
         }
-        #endregion
+
+        #endregion Method
     }
 }

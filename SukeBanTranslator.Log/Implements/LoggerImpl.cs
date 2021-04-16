@@ -1,19 +1,22 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using Serilog;
+﻿using Serilog;
 using Serilog.Core;
 using SukeBanTranslator.Shared;
+using System;
+using System.ComponentModel.Composition;
 
 namespace SukeBanTranslator.Log
-{   
+{
     [Export(typeof(ILogger))]
-    class LoggerImpl:ILogger
+    internal class LoggerImpl : ILogger
     {
         #region Fields
+
         private static Logger _logger;
-        #endregion
+
+        #endregion Fields
 
         #region Ctor
+
         public LoggerImpl()
         {
             var logFilePath = Environments.LogFilePath;
@@ -22,7 +25,8 @@ namespace SukeBanTranslator.Log
                 .WriteTo.File(logFilePath, rollingInterval: RollingInterval.Day)
                 .CreateLogger();
         }
-        #endregion
+
+        #endregion Ctor
 
         #region Methods
 
@@ -106,7 +110,7 @@ namespace SukeBanTranslator.Log
             Log("error", exception, messageTemplate, args);
         }
 
-        #endregion
+        #endregion Methods
 
         #region Functions
 
@@ -117,12 +121,15 @@ namespace SukeBanTranslator.Log
                 case "info":
                     _logger.Information(message);
                     break;
+
                 case "warning":
                     _logger.Information(message);
                     break;
+
                 case "error":
                     _logger.Information(message);
                     break;
+
                 case "trace":
                     _logger.Debug(message);
                     break;
@@ -136,19 +143,21 @@ namespace SukeBanTranslator.Log
                 case "info":
                     _logger.Information(exception, messageTemplate, args);
                     break;
+
                 case "warning":
                     _logger.Information(exception, messageTemplate, args);
                     break;
+
                 case "error":
                     _logger.Information(exception, messageTemplate, args);
                     break;
+
                 case "trace":
                     _logger.Debug(exception, messageTemplate, args);
                     break;
             }
         }
 
-        #endregion
-
+        #endregion Functions
     }
 }

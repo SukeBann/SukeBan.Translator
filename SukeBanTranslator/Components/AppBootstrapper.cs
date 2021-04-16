@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using SukeBanTranslator.Log;
+using SukeBanTranslator.Theme;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
@@ -7,13 +10,12 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
-using Caliburn.Micro;
-using SukeBanTranslator.Log;
-using SukeBanTranslator.Theme;
+using SukeBanTranslator.Core;
+using SukeBanTranslator.Translator;
 
 namespace SukeBanTranslator
 {
-    class AppBootstrapper:BootstrapperBase
+    internal class AppBootstrapper : BootstrapperBase
     {
         #region Fields
 
@@ -47,7 +49,7 @@ namespace SukeBanTranslator
         /// </summary>
         private ITranslatorEngine _translatorEngine;
 
-        #endregion
+        #endregion Fields
 
         #region Ctor
 
@@ -56,7 +58,7 @@ namespace SukeBanTranslator
             Initialize();
         }
 
-        #endregion
+        #endregion Ctor
 
         #region Overrides
 
@@ -73,6 +75,7 @@ namespace SukeBanTranslator
             );
             //添加MEF自动发现包含的程序集
             catalog.Catalogs.Add(new AssemblyCatalog(typeof(ILogger).Assembly));
+            catalog.Catalogs.Add(new AssemblyCatalog(typeof(ITranslationSourceToken).Assembly));
             catalog.Catalogs.Add(new AssemblyCatalog(typeof(IThemeManager).Assembly));
             catalog.Catalogs.Add(new AssemblyCatalog(typeof(ITranslatorEngine).Assembly));
 
@@ -149,7 +152,7 @@ namespace SukeBanTranslator
         /// <returns></returns>
         protected override IEnumerable<Assembly> SelectAssemblies()
         {
-            var assemblies = new List<Assembly>(){ Assembly.GetExecutingAssembly() };
+            var assemblies = new List<Assembly>() { Assembly.GetExecutingAssembly() };
             return assemblies;
         }
 
@@ -172,6 +175,6 @@ namespace SukeBanTranslator
             base.OnExit(sender, e);
         }
 
-        #endregion
+        #endregion Overrides
     }
 }

@@ -1,9 +1,8 @@
 ﻿<Application x:Class="SukeBanTranslator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:SukeBanTranslator"
-             xmlns:sukeBanTranslator="clr-namespace:SukeBanTranslator"
-             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver">
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             xmlns:sukeBanTranslator="clr-namespace:SukeBanTranslator">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -11,7 +10,7 @@
                     <sukeBanTranslator:AppBootstrapper x:Key="bootstrapper" />
                 </ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Themes/Standard.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Collections.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Collections.xaml" />
                 <ResourceDictionary>
                     <pu:GlobalSettings x:Key="globalSettings"
                                        FontSize="12"

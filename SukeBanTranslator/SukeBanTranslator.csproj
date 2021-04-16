@@ -100,6 +100,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Constractrs\ISubViewModel.cs" />
+    <Compile Include="ViewModels\AggregateTranslationViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +162,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AggregateTranslationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

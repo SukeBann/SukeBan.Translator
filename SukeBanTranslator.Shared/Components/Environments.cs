@@ -6,12 +6,15 @@ namespace SukeBanTranslator.Shared
     public static class Environments
     {
         #region Fields
+
         private const string _appDataPath = "%appdata%\\Panuon\\Panuon Setup";
-        #endregion
+
+        #endregion Fields
 
         #region Properties
 
         #region AppDataPath
+
         /// <summary>
         /// 获取当前提供给程序缓存使用的AppData路径。
         /// <para>若文件夹不存在，将创建新文件夹。</para>
@@ -28,9 +31,11 @@ namespace SukeBanTranslator.Shared
                 return path;
             }
         }
-        #endregion
+
+        #endregion AppDataPath
 
         #region LogFilePath
+
         /// <summary>
         /// 获取日志文件的储存位置。
         /// </summary>
@@ -46,8 +51,9 @@ namespace SukeBanTranslator.Shared
                 return Path.Combine(logDirectory, "Log.txt");
             }
         }
-        #endregion
 
-        #endregion
+        #endregion LogFilePath
+
+        #endregion Properties
     }
 }

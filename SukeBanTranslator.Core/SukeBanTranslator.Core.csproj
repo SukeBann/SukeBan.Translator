@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,7 +57,15 @@
   <ItemGroup>
     <Compile Include="Enums\LanguageType.cs" />
     <Compile Include="Enums\PresetTheme.cs" />
+    <Compile Include="Enums\TextProcessingType.cs" />
+    <Compile Include="Enums\TranslationMode.cs" />
     <Compile Include="Models\TranslationResult.cs" />
+    <Compile Include="Models\TranslationSourceToken\Contracts\ITranslationSourceToken.cs" />
+    <Compile Include="Models\TranslationSourceToken\Implements\BaiduToken.cs" />
+    <Compile Include="Models\TranslationSourceToken\Implements\CaiyunToken.cs" />
+    <Compile Include="Models\TranslationSourceToken\Implements\SogouToken.cs" />
+    <Compile Include="Models\TranslationSourceToken\Implements\TencentToken.cs" />
+    <Compile Include="Models\TranslationSourceToken\Implements\YoudaoToken.cs" />
     <Compile Include="Models\TranslatorConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

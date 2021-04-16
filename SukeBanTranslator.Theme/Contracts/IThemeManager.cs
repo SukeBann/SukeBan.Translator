@@ -1,7 +1,7 @@
 ﻿using SukeBanTranslator.Core;
 
 namespace SukeBanTranslator.Theme
-{   
+{
     /// <summary>
     /// 提供主题的切换功能
     /// </summary>

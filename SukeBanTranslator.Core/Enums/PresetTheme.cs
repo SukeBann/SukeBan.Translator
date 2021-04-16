@@ -6,6 +6,7 @@
         /// 基础样式
         /// </summary>
         Standard,
+
         /// <summary>
         /// 夜间模式
         /// </summary>
