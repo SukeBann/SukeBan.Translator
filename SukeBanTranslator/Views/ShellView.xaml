@@ -30,12 +30,12 @@
 
         <Grid Grid.Column="1"
               Opacity="1">
-            <!--<Grid.Style>
+            <Grid.Style>
                 <Style TargetType="Grid">
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding ElementName=Button,Path=Content}" Value="2">
-                            <Setter Property="Opacity"
-                                    Value="0"/>
+                            <Setter Property="Background"
+                                    Value="red"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -47,8 +47,8 @@
                         Content="{Binding BContent}"
                         Width="20" 
                         Height="20"/>
-            </StackPanel>-->
-            <ContentControl x:Name="ActiveItem"/>
+            </StackPanel>
+            <!--<ContentControl x:Name="ActiveItem"/>-->
         </Grid>
 
         <ListBox x:Name="Items"
