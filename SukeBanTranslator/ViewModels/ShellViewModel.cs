@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using SukeBanTranslator.Models;
 using System.ComponentModel.Composition;
-using System.Globalization;
 using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using SukeBanTranslator.Core;
 using SukeBanTranslator.Shared;
@@ -18,9 +16,7 @@ namespace SukeBanTranslator.ViewModels
         { 
             Items.AddRange(IoC.GetAll<ISubViewModel>());
             DisplayName = string.Empty;
-            UniversalConverter s = new UniversalConverter(){ConverterType = UniversalConverter.UniversalConverterType.IsNull};
-            object a = s.Convert(s, typeof(object), new object(), CultureInfo.CurrentCulture);
-            MessageBox.Show(a.ToString());
+
         }
 
         private int _BContent = 1;
