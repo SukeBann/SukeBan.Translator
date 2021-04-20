@@ -1,19 +1,31 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="ThemeColor">#6981F8</Color>
-    <Color x:Key="BackgroundColor">#FFFFFF</Color>
-    <Color x:Key="ForegroundColor">#1E1E1E</Color>
+    <Color x:Key="ThemeColor">#2A2A41</Color>
+    <Color x:Key="MenuColor">#2E2E48</Color>
 
-    <SolidColorBrush x:Key="ThemeBrush_100"
-                     Color="{StaticResource ThemeColor}" />
-    <SolidColorBrush x:Key="ThemeBrush_70"
-                     Color="{StaticResource ThemeColor}"
-                     Opacity="0.7" />
+    <Color x:Key="MenuActiveItemColor">#363654</Color>
+    <Color x:Key="MenuActiceItemHeaderColor">#63638B</Color>
 
-    <SolidColorBrush x:Key="BackgroundBrush_100"
-                     Color="{StaticResource BackgroundColor}" />
+    <Color x:Key="IconBaseColor">#70709F</Color>
+    <Color x:Key="IconActiveColor">#5C87FF</Color>
 
-    <SolidColorBrush x:Key="ForegroundBrush_100"
-                     Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="ThemeBrush"
+                     Color="{StaticResource ThemeColor}"/>
+
+    <SolidColorBrush x:Key="MenuBrush"
+                     Color="{StaticResource MenuColor}"/>
+
+    <SolidColorBrush x:Key="IconBaseBrush"
+                     Color="{StaticResource IconBaseColor}"/>
+
+    <SolidColorBrush x:Key="IconActiveBrush"
+                     Color="{StaticResource IconActiveColor}"/>
+
+    <SolidColorBrush x:Key="MenuActiveItemBrush"
+                     Color="{StaticResource MenuActiveItemColor}"/>
+
+    <SolidColorBrush x:Key="MenuActiceItemHeaderBrush"
+                     Color="{StaticResource MenuActiceItemHeaderColor}"/>
+
 </ResourceDictionary>

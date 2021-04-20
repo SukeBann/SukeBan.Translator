@@ -4,137 +4,155 @@
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+            xmlns:cal="http://www.caliburnproject.org"
             mc:Ignorable="d"
-            Height="700"
-            Width="1080"
+            WindowStartupLocation="CenterScreen"
+            Style="{DynamicResource TransparencyWindowXStyle}">
 
-            Topmost="True"
-            pu:WindowX.IsDragMoveArea="True"
-            pu:WindowXCaption.Buttons="None"
-            
-            Visibility="Visible"
-            ResizeMode="NoResize" 
-            SizeToContent="Manual" 
-            WindowStyle="None" 
-            Background="Transparent"
-            AllowsTransparency="True">
+    <pu:WindowX.Resources>
+    
+        <!--子页面Grid的加载动画Style-->
+        <Style x:Key="ContentGridLoadingStyle" 
+               TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=Self},Path=Tag}" Value="Loading">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                 Duration="0:0:0:0.5"
+                                                 From="0" To="1"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width"
+                                                 Duration="0:0:0:0.3"
+                                                 From="0" To="1000"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Height"
+                                                 Duration="0:0:0:0.3"
+                                                 From="0" To="665"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!--左侧子页面菜单ListBox样式-->
+        <Style x:Key="ContentMenuListBoxStyle"
+               TargetType="ListBox"
+               BasedOn="{StaticResource {x:Type ListBox}}">
+            <Setter Property="Margin"
+                    Value="10,20,0,0"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="BorderThickness"
+                    Value="0"/>
+            <Setter Property="VerticalContentAlignment"
+                    Value="Stretch"/>
+            <Setter Property="pu:ListBoxHelper.ItemsMargin"
+                    Value="0,10,0,10"/>
+            <Setter Property="pu:ListBoxHelper.ItemsPadding"
+                    Value="0"/>
+            <Setter Property="pu:ListBoxHelper.ItemsHeight"
+                    Value="50"/>
+            <Setter Property="pu:ListBoxHelper.ItemsHoverBackground"
+                    Value="Transparent"/>
+            <Setter Property="pu:ListBoxHelper.ItemsBorderThickness"
+                    Value="0"/>
+            <Setter Property="pu:ListBoxHelper.ItemsSelectedBackground"
+                    Value="Transparent"/>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid x:Name="itemGrid">
+                            <Border x:Name="itemBorder"
+                                CornerRadius="0"
+                                Background="#2E2E48" >
+                                <WrapPanel VerticalAlignment="Center">
+                                    <TextBlock x:Name="tbIcon"
+                                           FontFamily="{StaticResource PanuonIconFont}"
+                                           Margin="20,4"
+                                           Text="&#xe943;"
+                                           FontSize="24"
+                                           Foreground="{DynamicResource IconBaseBrush}" />
+                                    <TextBlock x:Name="tbHeader"
+                                           Text="{Binding DisplayName}"
+                                           FontSize="16"
+                                           Margin="0,5,10,0"
+                                           Visibility="Collapsed"/>
+                                </WrapPanel>
+                            </Border>
+                        </Grid>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBoxItem}}"
+                                     Value="True">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="tbHeader" 
+                                                         Storyboard.TargetProperty="Width"
+                                                         Duration="0:0:0:0.4"
+                                                         From="0" To="100"/>
+                                            <Storyboard BeginTime="0:0:2">
+                                                <DoubleAnimation Storyboard.TargetName="tbHeader" 
+                                                             Storyboard.TargetProperty="Width"
+                                                             Duration="0:0:0:0.2"
+                                                             From="100" To="0"/>
+                                            </Storyboard>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                                <Setter TargetName="itemBorder"
+                                    Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="White" Direction="90" ShadowDepth="1" BlurRadius="2" Opacity="0.4" />
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="tbHeader"
+                                    Property="Visibility"
+                                    Value="Visible" />
+                                <Setter TargetName="tbHeader"
+                                    Property="Foreground"
+                                    Value="{DynamicResource MenuActiceItemHeaderBrush}" />
+                                <Setter TargetName="tbIcon"
+                                    Property="Foreground"
+                                    Value="{DynamicResource IconActiveBrush}" />
+                                <Setter TargetName="itemBorder"
+                                    Property="Background"
+                                    Value="{DynamicResource MenuActiveItemBrush}" />
+                                <Setter TargetName="itemBorder"
+                                    Property="CornerRadius"
+                                    Value="15" />
+                                <Setter TargetName="itemBorder"
+                                    Property="Margin"
+                                    Value="5,0,0,0" />
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </pu:WindowX.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="490*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <Border Background="#2E2E48"
-                    CornerRadius="24"/>
+            <Border Style="{DynamicResource MenuBorderStyle}"></Border>
         </Grid>
 
         <Grid Grid.Column="1"
-              Opacity="1">
-            <!--<Grid.Style>
-                <Style TargetType="Grid">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding ElementName=Button,Path=Content}" Value="2">
-                            <Setter Property="Opacity"
-                                    Value="0"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Grid.Style>
-            <StackPanel>
-                <ContentControl x:Name="ActiveItem"/>
-                <Button x:Name="Button" 
-                        Background="Red"
-                        Content="{Binding BContent}"
-                        Width="20" 
-                        Height="20"/>
-            </StackPanel>-->
+              Style="{StaticResource ContentGridLoadingStyle}"
+              Tag="{Binding GridLoadingTag,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
             <ContentControl x:Name="ActiveItem"/>
         </Grid>
 
         <ListBox x:Name="Items"
                  Grid.Column="0"
                  Grid.ColumnSpan="2"
-                 SelectedItem="{Binding ActiveItem}"
-                 Margin="10,20,0,0"
-                 HorizontalAlignment="Left"
-                 BorderThickness="0"
-                 VerticalContentAlignment="Stretch"
-                 pu:ListBoxHelper.ItemsMargin="0,10,0,10"
-                 pu:ListBoxHelper.ItemsPadding="0"
-                 pu:ListBoxHelper.ItemsHeight="50"
-                 pu:ListBoxHelper.ItemsHoverBackground="Transparent"
-                 pu:ListBoxHelper.ItemsBorderThickness="0"
-                 pu:ListBoxHelper.ItemsSelectedBackground="Transparent">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid x:Name="itemGrid">
-                        <Border x:Name="itemBorder"
-                                CornerRadius="0"
-                                Background="#2E2E48" >
-                            <WrapPanel VerticalAlignment="Center">
-                                <TextBlock x:Name="tbIcon"
-                                           FontFamily="{StaticResource PanuonIconFont}"
-                                           Margin="20,4"
-                                           Text="&#xe943;"
-                                           FontSize="24"
-                                           Foreground="#70709F" />
-                                <TextBlock x:Name="tbHeader"
-                                           Text="{Binding DisplayName}"
-                                           FontSize="16"
-                                           Margin="0,5,10,0"
-                                           Foreground="#5A5A81"
-                                           Visibility="Collapsed"/>
-                            </WrapPanel>
-                        </Border>
-                    </Grid>
-                    <DataTemplate.Triggers>
-                        <DataTrigger Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBoxItem}}"
-                                     Value="True">
-                            <DataTrigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="tbHeader" 
-                                                         Storyboard.TargetProperty="Width"
-                                                         Duration="0:0:0:0.4"
-                                                         From="0" To="100"/>
-                                        <Storyboard BeginTime="0:0:2">
-                                            <DoubleAnimation Storyboard.TargetName="tbHeader" 
-                                                             Storyboard.TargetProperty="Width"
-                                                             Duration="0:0:0:0.2"
-                                                             From="100" To="0"/>
-                                        </Storyboard>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </DataTrigger.EnterActions>
-                            <Setter TargetName="itemBorder"
-                                    Property="Effect">
-                                <Setter.Value>
-                                    <DropShadowEffect Color="White" Direction="90" ShadowDepth="1" BlurRadius="2" Opacity="0.4" />
-                                </Setter.Value>
-                            </Setter>
-                            <Setter TargetName="tbHeader"
-                                    Property="Visibility"
-                                    Value="Visible" />
-                            <Setter TargetName="tbHeader"
-                                    Property="Foreground"
-                                    Value="#63638B" />
-                            <Setter TargetName="tbIcon"
-                                    Property="Foreground"
-                                    Value="#5C87FF" />
-                            <Setter TargetName="itemBorder"
-                                    Property="Background"
-                                    Value="#363654" />
-                            <Setter TargetName="itemBorder"
-                                    Property="CornerRadius"
-                                    Value="15" />
-                            <Setter TargetName="itemBorder"
-                                    Property="Margin"
-                                    Value="5,0,0,0" />
-                        </DataTrigger>
-                    </DataTemplate.Triggers>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                 Style="{StaticResource ContentMenuListBoxStyle}"
+                 cal:Message.Attach="[Event SelectionChanged] = [Action SelectionChanged]"
+                 SelectedItem="{Binding ActiveItem}"/>
     </Grid>
 
 </pu:WindowX>

@@ -9,6 +9,6 @@
            TargetType="Button"
            BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Background"
-                Value="{DynamicResource ThemeBrush_100}" />
+                Value="{DynamicResource ThemeBrush}"/>
     </Style>
 </ResourceDictionary>

@@ -101,9 +101,9 @@ namespace SukeBanTranslator.Shared
         /// </summary>
         private void SetConverterFunc()
         {
-            var ThisType = this.GetType();
-            var MethodInfoArray = ThisType.GetMethods();
-            foreach (var methodInfo in MethodInfoArray)
+            var thisType = this.GetType(); 
+            var methodInfoArray = thisType.GetMethods();
+            foreach (var methodInfo in methodInfoArray)
             {
                 if (!Regex.IsMatch(methodInfo.Name, ConverterType.ToString())) continue;
                 ConverterFunc = new Func<object, Type, object, CultureInfo, bool, object>

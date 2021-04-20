@@ -20,7 +20,7 @@ namespace SukeBanTranslator.Shared
                 case BaseLanguageType.cht:
                     return "cht";
                 default:
-                    return "";
+                    return "auto";
             }
         }
     }

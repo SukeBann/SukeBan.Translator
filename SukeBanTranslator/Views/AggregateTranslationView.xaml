@@ -6,19 +6,45 @@
              xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
              xmlns:local="clr-namespace:SukeBanTranslator.Views"
              mc:Ignorable="d" 
-             
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DrawingBrush x:Key="BorderBrush"
+                      Viewport="0,0,9,9"
+                      ViewportUnits="Absolute"
+                      Stretch="None"
+                      TileMode="Tile">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="#44D0CEC7">
+                        <GeometryDrawing.Geometry>
+                            <GeometryGroup>
+                                <EllipseGeometry RadiusX="0.8" RadiusY="0.8"/>
+                            </GeometryGroup>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Border Background="#2A2A41"
-                CornerRadius="24">
+        <Border Style="{DynamicResource ThemedBorderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.6*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="24,24,0,0"
+                        Background="{StaticResource BorderBrush}"/>
+            </Grid>
         </Border>
         <Border Grid.Column="1"
-                Background="#2A2A41"
-                CornerRadius="24">
+                Style="{DynamicResource ThemedBorderStyle}"
+                CornerRadius="24"
+                Background="#2A2A41">
         </Border>
     </Grid>
     

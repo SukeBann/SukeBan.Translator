@@ -34,14 +34,17 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\SukeBanTranslator\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\Environments.cs" />
@@ -50,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\APIHelper.cs" />
     <Compile Include="Utils\IOUtil.cs" />
+    <Compile Include="Utils\JsonHelper.cs" />
+    <Compile Include="Utils\MultipleUniversalConverter.cs" />
+    <Compile Include="Utils\NormalConverter.cs" />
+    <Compile Include="Utils\UniversalConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SukeBanTranslator.Core\SukeBanTranslator.Core.csproj">

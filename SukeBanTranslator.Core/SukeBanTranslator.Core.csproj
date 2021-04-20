@@ -59,7 +59,9 @@
     <Compile Include="Enums\PresetTheme.cs" />
     <Compile Include="Enums\TextProcessingType.cs" />
     <Compile Include="Enums\TranslationMode.cs" />
-    <Compile Include="Models\TranslationResult.cs" />
+    <Compile Include="Models\TranslationResult\Contracts\ITranslationResult.cs" />
+    <Compile Include="Models\TranslationResult\Implements\GeneralTranslationResult.cs" />
+    <Compile Include="Models\TranslationResult\TemporaryClass\BaiduTemporart.cs" />
     <Compile Include="Models\TranslationSourceToken\Contracts\ITranslationSourceToken.cs" />
     <Compile Include="Models\TranslationSourceToken\Implements\BaiduToken.cs" />
     <Compile Include="Models\TranslationSourceToken\Implements\CaiyunToken.cs" />

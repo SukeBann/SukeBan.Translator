@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="SukeBanTranslator.Views.AggregateTranslationDicView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SukeBanTranslator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#2A2A41"
+                CornerRadius="24">
+        </Border>
+        <Border Grid.Column="1"
+                Background="#2A2A41"
+                CornerRadius="24">
+        </Border>
+    </Grid>
+</UserControl>

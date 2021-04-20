@@ -6,7 +6,6 @@ namespace SukeBanTranslator.Translator
     /// <summary>
     /// 定义翻译器引擎的核心接口
     /// </summary>
-    /// <typeparam name="T">翻译结果的类型</typeparam>
     public interface ITranslatorEngine
     {
         /// <summary>
@@ -24,7 +23,7 @@ namespace SukeBanTranslator.Translator
         /// </summary>
         /// <param name="configuration"></param>
         /// <returns></returns>
-        ITranslator CreateTranslator(TranslationSource Tsource);
+        ITranslator CreateTranslator(TranslationSource tSource, ITranslationSourceToken token,ITranslatorConfiguration tConfig);
 
         /// <summary>
         /// 创建可用的翻译器合

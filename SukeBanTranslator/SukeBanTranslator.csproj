@@ -100,7 +100,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Constractrs\IPageControlViewModel.cs" />
     <Compile Include="Constractrs\ISubViewModel.cs" />
+    <Compile Include="Models\Abstracts\SubViewModelBase.cs" />
+    <Compile Include="ViewModels\AggregatePictureTranslationViewModel.cs" />
+    <Compile Include="ViewModels\AggregateTranslationDicViewModel.cs" />
     <Compile Include="ViewModels\AggregateTranslationViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
   </ItemGroup>
@@ -162,6 +166,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AggregatePictureTranslationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AggregateTranslationDicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AggregateTranslationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

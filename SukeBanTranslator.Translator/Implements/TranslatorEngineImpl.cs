@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SukeBanTranslator.Core;
 using System.ComponentModel.Composition;
+using System.Linq;
 using SukeBanTranslator.Shared;
+using SukeBanTranslator.Translator.Models;
 
 namespace SukeBanTranslator.Translator
 {
@@ -22,14 +25,29 @@ namespace SukeBanTranslator.Translator
         public Dictionary<TranslationSource, ITranslationSourceToken> TSourceTokenList { get; set; }
 
 
-        public ITranslator CreateTranslator(TranslationSource Tsource)
+        public ITranslator CreateTranslator(TranslationSource tSource, ITranslationSourceToken token, ITranslatorConfiguration tConfig)
         {
-            throw new System.NotImplementedException();
+            switch (tSource)
+            {
+                case TranslationSource.Baidu:
+                    return new BaiduTranslator()
+                    {
+                        tSource = TranslationSource.Baidu,
+                        token = token,
+                        translatorConfig = tConfig
+                    };
+                case TranslationSource.Youdao:
+                case TranslationSource.Caiyun:
+                case TranslationSource.Tencent:
+                case TranslationSource.Sogou:
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(tSource), tSource, null);
+            }
         }
 
         public List<ITranslator> CreateTranslatorList()
         {
-            throw new System.NotImplementedException();
+            return TSourceTokenList.Select(sourceToken => CreateTranslator(sourceToken.Key, sourceToken.Value, TConfig)).ToList();
         }
     }
 }

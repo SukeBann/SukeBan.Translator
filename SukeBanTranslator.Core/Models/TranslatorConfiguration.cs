@@ -2,6 +2,9 @@
 
 namespace SukeBanTranslator.Core
 {
+    /// <summary>
+    /// 提供翻译器配置的功能
+    /// </summary>
     public interface ITranslatorConfiguration
     {
         /// <summary>
@@ -13,6 +16,11 @@ namespace SukeBanTranslator.Core
         /// 目标语言
         /// </summary>
         BaseLanguageType To { get; set; }
+
+        /// <summary>
+        /// 翻译类型
+        /// </summary>
+        TranslationMode TranslationType { get; set; }
     }
 
     /// <summary>
@@ -31,17 +39,20 @@ namespace SukeBanTranslator.Core
         public TranslatorConfiguration()
         {
             From = BaseLanguageType.auto;
-            To = BaseLanguageType.auto;
+            To = BaseLanguageType.en;
         }
 
         #endregion Ctor
 
+
+
         #region Properties
 
-        
         public BaseLanguageType From { get; set; }
 
         public BaseLanguageType To { get; set; }
+
+        public TranslationMode TranslationType { get; set; }
 
         #endregion Properties
     }
