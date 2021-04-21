@@ -10,6 +10,9 @@
     <Color x:Key="IconBaseColor">#70709F</Color>
     <Color x:Key="IconActiveColor">#5C87FF</Color>
 
+    <Color x:Key="ButtonBorderColor">#46467A</Color>
+    <Color x:Key="ButtonHoverBackGroundColor">#25253B</Color>
+
     <SolidColorBrush x:Key="ThemeBrush"
                      Color="{StaticResource ThemeColor}"/>
 
@@ -27,5 +30,11 @@
 
     <SolidColorBrush x:Key="MenuActiceItemHeaderBrush"
                      Color="{StaticResource MenuActiceItemHeaderColor}"/>
+
+    <SolidColorBrush x:Key="ButtonBorderBrush"
+                     Color="{StaticResource ButtonBorderColor}"/>
+
+    <SolidColorBrush x:Key="ButtonHoverBackGroundBrush"
+                     Color="{StaticResource ButtonHoverBackGroundColor}"/>
 
 </ResourceDictionary>

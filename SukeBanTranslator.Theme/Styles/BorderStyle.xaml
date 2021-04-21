@@ -26,27 +26,32 @@
     </Style>
 
     <DrawingBrush x:Key="BorderBrush"
-                  Viewport="0,0,12,12"
+                  Viewport="0,0,8,8"
                   ViewportUnits="Absolute"
                   Stretch="None"
                   TileMode="Tile">
         <DrawingBrush.Drawing>
             <DrawingGroup>
-                <GeometryDrawing Brush="#44D0CEC7">
+                <GeometryDrawing Brush="#D6D2D2">
                     <GeometryDrawing.Geometry>
                         <GeometryGroup>
-                            <RectangleGeometry Rect="0,0,6,6"/>
-                            <RectangleGeometry Rect="6,6,6,6"/>
+                            <EllipseGeometry RadiusX="0.8" RadiusY="0.8" />
                         </GeometryGroup>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
-                <GeometryDrawing Brush="#44E7E7E2">
-                    <GeometryDrawing.Geometry>
-                        <RectangleGeometry Rect="0,6,12,0"/>
-                    </GeometryDrawing.Geometry>
-                </GeometryDrawing>
             </DrawingGroup>
-        </DrawingBrush.Drawing>  
+        </DrawingBrush.Drawing>
     </DrawingBrush>
+
+    <LinearGradientBrush x:Key="BorderOpacityMaskBrush"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#44D0CEC7" />
+            <GradientStop Offset="0.5" Color="#44D0CEC7" />
+            <GradientStop Offset="0.8" Color="Transparent" />
+            <GradientStop Offset="1" Color="Transparent" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
 
 </ResourceDictionary>
