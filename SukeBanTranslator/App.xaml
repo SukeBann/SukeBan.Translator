@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Collections.xaml" />
                 <ResourceDictionary>
                     <pu:GlobalSettings x:Key="globalSettings"
-                                       FontSize="12"
+                                       FontSize="36"
                                        IconFontSize="20"
                                        IconFontFamily="{StaticResource PanuonIconFont}" />
                 </ResourceDictionary>

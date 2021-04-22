@@ -41,8 +41,8 @@
     <Reference Include="Panuon.UI.Core, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\SukeBanTranslator\packages\Panuon.UI.Core.2.2.1\lib\net45\Panuon.UI.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Panuon.UI.Silver, Version=2.2.5.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\SukeBanTranslator\packages\Panuon.UI.Silver.2.2.5.1-alpha\lib\net45\Panuon.UI.Silver.dll</HintPath>
+    <Reference Include="Panuon.UI.Silver, Version=2.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\SukeBanTranslator\packages\Panuon.UI.Silver.2.2.7-alpha\lib\net45\Panuon.UI.Silver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -103,6 +103,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBlockStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

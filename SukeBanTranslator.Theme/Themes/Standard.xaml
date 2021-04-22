@@ -13,6 +13,8 @@
     <Color x:Key="ButtonBorderColor">#46467A</Color>
     <Color x:Key="ButtonHoverBackGroundColor">#25253B</Color>
 
+    <Color x:Key="ThemeFontColor">#EFEFFF</Color>
+
     <SolidColorBrush x:Key="ThemeBrush"
                      Color="{StaticResource ThemeColor}"/>
 
@@ -36,5 +38,8 @@
 
     <SolidColorBrush x:Key="ButtonHoverBackGroundBrush"
                      Color="{StaticResource ButtonHoverBackGroundColor}"/>
+
+    <SolidColorBrush x:Key="ThemeFontBrush"
+                     Color="{StaticResource ThemeFontColor}"/>
 
 </ResourceDictionary>

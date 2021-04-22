@@ -102,11 +102,18 @@
     </Compile>
     <Compile Include="Constractrs\IPageControlViewModel.cs" />
     <Compile Include="Constractrs\ISubViewModel.cs" />
+    <Compile Include="CustomControl\DropDownRichTextBox.xaml.cs">
+      <DependentUpon>DropDownRichTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Abstracts\SubViewModelBase.cs" />
     <Compile Include="ViewModels\AggregatePictureTranslationViewModel.cs" />
     <Compile Include="ViewModels\AggregateTranslationDicViewModel.cs" />
     <Compile Include="ViewModels\AggregateTranslationViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\TranslationResultPanelViewModel.cs" />
+    <Compile Include="Views\TranslationResultPanelView.xaml.cs">
+      <DependentUpon>TranslationResultPanelView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\AppBootstrapper.cs" />
@@ -166,6 +173,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CustomControl\DropDownRichTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AggregatePictureTranslationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TranslationResultPanelView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

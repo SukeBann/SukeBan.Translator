@@ -6,7 +6,7 @@ namespace SukeBanTranslator.Models
     /// <summary>
     /// <paramref name="T:SukeBanTranslator.ISubViewModel"/>的抽象实现
     /// </summary>
-    public abstract class SubViewModelBase: Conductor<IPageControlViewModel>.Collection.AllActive,ISubViewModel
+    public abstract class SubViewModelBase: Conductor<IPageControlViewModel>.Collection.OneActive,ISubViewModel
     {
         #region Properties
 

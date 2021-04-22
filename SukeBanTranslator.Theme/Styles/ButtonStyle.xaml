@@ -22,7 +22,7 @@
                 Value="1.5"/>
         <Setter Property="pu:ButtonHelper.CornerRadius"
                 Value="19"/>
-        <Setter Property="Foreground"
+        <Setter Property="pu:IconHelper.Foreground"
                 Value="{DynamicResource IconActiveBrush}"/>
         <Setter Property="BorderBrush"
                 Value="{DynamicResource ButtonBorderBrush}"/>

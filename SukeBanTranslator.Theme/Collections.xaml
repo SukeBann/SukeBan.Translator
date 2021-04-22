@@ -4,5 +4,7 @@
         <pucore:SharedResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Styles/ButtonStyle.xaml"/>
         <pucore:SharedResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Styles/WindowXStyle.xaml"/>
         <pucore:SharedResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Styles/BorderStyle.xaml"/>
+        <pucore:SharedResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Styles/TextBlockStyle.xaml"/>
+        <pucore:SharedResourceDictionary Source="pack://application:,,,/SukeBanTranslator.Theme;component/Styles/ComboBoxStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

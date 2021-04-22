@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             xmlns:CustomControl="clr-namespace:SukeBanTranslator.CustomControl"
              mc:Ignorable="d"
              d:DesignHeight="700" d:DesignWidth="1000">
     <UserControl.Resources>
@@ -17,50 +18,46 @@
         <Border Style="{DynamicResource ThemedBorderStyle}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.7*" />
+                    <RowDefinition Height="0.6*" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <RichTextBox Grid.Row="1"
-                             Margin="20">
-                    <RichTextBox.Template>
-                        <ControlTemplate>
-                            <Border Padding="10"
-                                    CornerRadius="24">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="../Resources/InputBorder.png">
-                                    </ImageBrush>
-                                </Border.Background>
-                                <RichTextBox BorderThickness="0"
-                                             VerticalScrollBarVisibility="Visible"
-                                             FontFamily="Fira Code Medium"
-                                             Foreground="#E8E8F8"
-                                             FontSize="16"
-                                             Background="Transparent">
-                                </RichTextBox>
-                            </Border>
-                        </ControlTemplate>
-                    </RichTextBox.Template>
-                </RichTextBox>
+                <!--背景板：点状背景-->
+                <Border Grid.Row="0"
+                        CornerRadius="24,24,0,0"
+                        OpacityMask="{DynamicResource BorderOpacityMaskBrush}"
+                        Background="{DynamicResource BorderBrush}" />
 
                 <Grid Grid.Row="0"
                       ZIndex="99">
                     <StackPanel>
 
-                        <TextBlock Margin="40,20,0,0"
-                                   Foreground="#74749F"
-                                   Text="Version | v.0.1.0"/>
+                        <Grid Margin="40,20,0,0">
+                            <TextBlock Foreground="#74749F"
+                                       Text="Version | v.0.1.0"/>
+                            <Button x:Name="Setting"
+                                    pu:ButtonHelper.Icon="&#xe98f;"
+                                    pu:IconHelper.FontSize="18"
+                                    Padding="4,0,0,0"
+                                    Margin="0,0,14,0"
+                                    Width="40"
+                                    Height="40"
+                                    pu:ButtonHelper.CornerRadius="12"
+                                    HorizontalAlignment="Right" 
+                                    Style="{DynamicResource MainTransparentButtonStyle}"/>
+                        </Grid>
 
-                        <DockPanel Margin="20,30,0,0"
+                        <DockPanel Margin="20,10,0,0"
                                    VerticalAlignment="Stretch"
                                    HorizontalAlignment="Left">
                             <Button x:Name="Button"
-                                   Content="&#xe951;"
-                                   Style="{DynamicResource MainTransparentButtonStyle}"
-                                   FontSize="26"
-                                   Padding="-2,2,0,0"
-                                   Height="60"
-                                   Width="60">
+                                    pu:ButtonHelper.Icon="&#xe951;"
+                                    pu:IconHelper.FontSize="28"
+                                    Padding="3,0,0,0"
+                                    Style="{DynamicResource MainTransparentButtonStyle}"
+                                    FontSize="26"
+                                    Height="60"
+                                    Width="60">
                             </Button>
                             <TextBlock Text="History"
                                        Margin="10,0,0,0"
@@ -70,19 +67,56 @@
                                        FontFamily="Fira Code Medium"
                                        Foreground="#EFEFFF"/>
                         </DockPanel>
+
                     </StackPanel>
                 </Grid>
 
-                <Border Grid.Row="0"
-                        CornerRadius="24,24,0,0"
-                        OpacityMask="{DynamicResource BorderOpacityMaskBrush}"
-                        Background="{DynamicResource BorderBrush}" />
+                <DockPanel Grid.Row="1">
+                    <WrapPanel DockPanel.Dock="Top"
+                               Margin="30,0,0,0">
+                        <ComboBox ItemsSource="{Binding LanguageSource}"
+                                  Style="{DynamicResource TransparentComboBoxStyle}"
+                                  pu:ComboBoxHelper.Icon="&#xe9a5;">
+                            <ComboBox.ItemTemplate>
+                               <DataTemplate>
+                                    <TextBlock TextAlignment="Center" Text="{Binding Language}"/>
+                               </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <TextBlock Text="&#xe90e;"
+                                   Width="60"
+                                   Padding="0,8,0,0"
+                                   TextAlignment="Center"
+                                   FontSize="25"
+                                   Style="{DynamicResource IconTextBlockBaseStyle}"/>
+
+                        <ComboBox ItemsSource="{Binding LanguageSource}"
+                                  Style="{DynamicResource TransparentComboBoxStyle}"
+                                  pu:ComboBoxHelper.Icon="&#xe9a5;">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock TextAlignment="Center" Text="{Binding Language}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <Button Content="翻译"
+                                pu:ButtonHelper.Icon="&#xe9de;"
+                                Foreground="{DynamicResource ThemeFontBrush}"
+                                Margin="30,0,0,0"
+                                FontSize="16"
+                                Width="120"
+                                pu:ButtonHelper.CornerRadius="14"
+                                Style="{DynamicResource MainTransparentButtonStyle}"/>
+
+                    </WrapPanel>
+                    <CustomControl:DropDownRichTextBox Margin="20"/>
+                </DockPanel>
+
+               
             </Grid>
         </Border>
-        <Border Grid.Column="1"
-                Style="{DynamicResource ThemedBorderStyle}"
-                CornerRadius="24"
-                Background="#2A2A41">
-        </Border>
+        <ContentControl  x:Name="ActiveItem"/>
     </Grid>
 </UserControl>
