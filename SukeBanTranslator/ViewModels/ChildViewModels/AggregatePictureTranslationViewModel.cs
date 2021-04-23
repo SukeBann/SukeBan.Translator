@@ -6,8 +6,8 @@ using SukeBanTranslator.Models;
 
 namespace SukeBanTranslator.ViewModels
 {
-    [Export(typeof(ISubViewModel))]
-    public class AggregatePictureTranslationViewModel: SubViewModelBase
+    [Export(typeof(IChildViewModel))]
+    public class AggregatePictureTranslationViewModel: ChildViewModelBase
     {
         public AggregatePictureTranslationViewModel()
         {

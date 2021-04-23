@@ -167,7 +167,7 @@ namespace SukeBanTranslator
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<IViewModel>();
+            DisplayRootViewFor<IShellViewModel>();
         }
 
         protected override void OnExit(object sender, EventArgs e)

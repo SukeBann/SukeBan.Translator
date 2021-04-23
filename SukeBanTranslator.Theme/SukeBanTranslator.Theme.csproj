@@ -86,7 +86,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\InputBorder.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SukeBanTranslator.Core\SukeBanTranslator.Core.csproj">
       <Project>{DE7D76CF-498E-44DA-BE01-FB2F06A52CB3}</Project>

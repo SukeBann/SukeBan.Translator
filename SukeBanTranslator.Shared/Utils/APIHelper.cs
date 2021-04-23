@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SukeBanTranslator.Core;
 
 namespace SukeBanTranslator.Shared
@@ -24,4 +25,5 @@ namespace SukeBanTranslator.Shared
             }
         }
     }
+
 }

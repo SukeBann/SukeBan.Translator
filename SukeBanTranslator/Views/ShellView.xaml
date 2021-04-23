@@ -52,17 +52,19 @@
             <Setter Property="VerticalContentAlignment"
                     Value="Stretch"/>
             <Setter Property="pu:ListBoxHelper.ItemsMargin"
-                    Value="0,10,0,10"/>
+                    Value="0,20,0,0"/>
             <Setter Property="pu:ListBoxHelper.ItemsPadding"
                     Value="0"/>
             <Setter Property="pu:ListBoxHelper.ItemsHeight"
-                    Value="50"/>
+                    Value="45"/>
             <Setter Property="pu:ListBoxHelper.ItemsHoverBackground"
                     Value="Transparent"/>
             <Setter Property="pu:ListBoxHelper.ItemsBorderThickness"
                     Value="0"/>
             <Setter Property="pu:ListBoxHelper.ItemsSelectedBackground"
                     Value="Transparent"/>
+            <Setter Property="pu:ListBoxHelper.ItemsHorizontalContentAlignment"
+                    Value="Left"/>
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate>
@@ -127,7 +129,7 @@
                                     Value="15" />
                                 <Setter TargetName="itemBorder"
                                     Property="Margin"
-                                    Value="5,0,0,0" />
+                                    Value="5,1,0,0" />
                             </DataTrigger>
                         </DataTemplate.Triggers>
                     </DataTemplate>

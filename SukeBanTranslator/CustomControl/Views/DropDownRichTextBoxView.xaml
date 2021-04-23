@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SukeBanTranslator.CustomControl.DropDownRichTextBox"
+﻿<UserControl x:Class="SukeBanTranslator.CustomControl.Views.DropDownRichTextBoxView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,11 +10,8 @@
         <RichTextBox.Template>
             <ControlTemplate>
                 <Border Padding="10"
+                        Background="{DynamicResource DropDownImageBrush}"
                         CornerRadius="24">
-                    <Border.Background>
-                        <ImageBrush ImageSource="../Resources/InputBorder.png">
-                        </ImageBrush>
-                    </Border.Background>
                     <RichTextBox BorderThickness="0"
                                  VerticalScrollBarVisibility="Visible"
                                  FontFamily="Fira Code Medium"

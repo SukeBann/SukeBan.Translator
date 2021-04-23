@@ -9,7 +9,7 @@
     <Style x:Key="ButtonIconBaseStyle"
            TargetType="Button"
            BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="FontFamily"
+        <Setter Property="pu:IconHelper.FontFamily"
                 Value="{StaticResource PanuonIconFont}"/>
     </Style>
 

@@ -12,8 +12,8 @@ using SukeBanTranslator.Translator;
 
 namespace SukeBanTranslator.ViewModels
 {
-    [Export(typeof(IViewModel))]
-    public class ShellViewModel : ViewModelBase
+    [Export(typeof(IShellViewModel))]
+    public class ShellViewModel : ShellViewModelBase
     {
         #region Ctor
 
@@ -21,7 +21,7 @@ namespace SukeBanTranslator.ViewModels
         {
             DisplayName = string.Empty;
 
-            Items.AddRange(IoC.GetAll<ISubViewModel>().Reverse());
+            Items.AddRange(IoC.GetAll<IChildViewModel>().Reverse());
 
             //IoC.Get<ITranslatorConfiguration>().To = BaseLanguageType.en;
             //IoC.Get<ITranslatorConfiguration>().From = BaseLanguageType.zh;

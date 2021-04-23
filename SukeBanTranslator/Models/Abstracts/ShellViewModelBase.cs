@@ -3,7 +3,7 @@ using SukeBanTranslator.Log;
 
 namespace SukeBanTranslator.Models
 {
-    public class SubViewModelBase:Conductor<IPageControlViewModel>.Collection.AllActive,ISubViewModel
+    public abstract class ShellViewModelBase : Conductor<IChildViewModel>.Collection.OneActive, IShellViewModel
     {
         #region Properties
 

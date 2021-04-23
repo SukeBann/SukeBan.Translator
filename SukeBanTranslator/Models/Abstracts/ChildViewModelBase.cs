@@ -3,7 +3,10 @@ using SukeBanTranslator.Log;
 
 namespace SukeBanTranslator.Models
 {
-    public abstract class ViewModelBase : Conductor<ISubViewModel>.Collection.OneActive, IViewModel
+    /// <summary>
+    /// <paramref name="T:SukeBanTranslator.IChildViewModel"/>的抽象实现
+    /// </summary>
+    public abstract class ChildViewModelBase: Conductor<ISubViewModel>.Collection.AllActive,IChildViewModel
     {
         #region Properties
 

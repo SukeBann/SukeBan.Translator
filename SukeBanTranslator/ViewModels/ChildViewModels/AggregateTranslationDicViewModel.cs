@@ -4,8 +4,8 @@ using SukeBanTranslator.Models;
 
 namespace SukeBanTranslator.ViewModels
 {
-    [Export(typeof(ISubViewModel))]
-    public class AggregateTranslationDicViewModel: SubViewModelBase
+    [Export(typeof(IChildViewModel))]
+    public class AggregateTranslationDicViewModel: ChildViewModelBase
     {
         public AggregateTranslationDicViewModel()
         {

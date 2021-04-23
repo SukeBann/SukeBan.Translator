@@ -1,6 +1,20 @@
 ﻿namespace SukeBanTranslator.Core
 {
     /// <summary>
+    /// 语种枚举以及对应的中文
+    /// </summary>
+    public class LanguageSourceAndEnum
+    {
+        public BaseLanguageType BaseLanguageType { get; set; }
+
+        /// <summary>
+        /// 语种枚举对应的 中文
+        /// </summary>
+        public string Language { get; set; }
+
+    }
+
+    /// <summary>
     /// 语种类型
     /// </summary>
     public enum BaseLanguageType

@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="SukeBanTranslator.Views.ATMainInputView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SukeBanTranslator.Views"
+             xmlns:silver="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="500">
+    <Border Style="{DynamicResource ThemedBorderStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <!--背景板：点状背景-->
+            <Border Grid.Row="0"
+                        CornerRadius="24,24,0,0"
+                        OpacityMask="{DynamicResource BorderOpacityMaskBrush}"
+                        Background="{DynamicResource BorderBrush}" />
+
+            <Grid Grid.Row="0"
+                      ZIndex="99">
+                <StackPanel>
+
+                    <Grid Margin="40,20,0,0">
+                        <TextBlock Foreground="#74749F"
+                                       Text="Version | v.0.1.0"/>
+                        <Button x:Name="Setting"
+                                    silver:ButtonHelper.Icon="&#xe98f;"
+                                    silver:IconHelper.FontSize="18"
+                                    Padding="4,0,0,0"
+                                    Margin="0,0,14,0"
+                                    Width="40"
+                                    Height="40"
+                                    silver:ButtonHelper.CornerRadius="12"
+                                    HorizontalAlignment="Right" 
+                                    Style="{DynamicResource MainTransparentButtonStyle}"/>
+                    </Grid>
+
+                    <DockPanel Margin="20,10,0,0"
+                                   VerticalAlignment="Stretch"
+                                   HorizontalAlignment="Left">
+                        <Button x:Name="Button"
+                                    silver:ButtonHelper.Icon="&#xe951;"
+                                    silver:IconHelper.FontSize="28"
+                                    Padding="3,0,0,0"
+                                    Style="{DynamicResource MainTransparentButtonStyle}"
+                                    FontSize="26"
+                                    Height="60"
+                                    Width="60">
+                        </Button>
+                        <TextBlock Text="History"
+                                       Margin="10,0,0,0"
+                                       FontSize="36"
+                                       TextAlignment="Center"
+                                       Padding="0,6,0,0"
+                                       FontFamily="Fira Code Medium"
+                                       Foreground="#EFEFFF"/>
+                    </DockPanel>
+
+                </StackPanel>
+            </Grid>
+
+            <DockPanel Grid.Row="1">
+                <WrapPanel DockPanel.Dock="Top"
+                               Margin="30,0,0,0">
+                    <ComboBox ItemsSource="{Binding LanguageSource}"
+                                  Style="{DynamicResource TransparentComboBoxStyle}"
+                                  silver:ComboBoxHelper.Icon="&#xe9a5;">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock TextAlignment="Center" Text="{Binding Language}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <TextBlock Text="&#xe90e;"
+                                   Width="60"
+                                   Padding="0,8,0,0"
+                                   TextAlignment="Center"
+                                   FontSize="25"
+                                   Style="{DynamicResource IconTextBlockBaseStyle}"/>
+
+                    <ComboBox ItemsSource="{Binding LanguageSource}"
+                                  Style="{DynamicResource TransparentComboBoxStyle}"
+                                  silver:ComboBoxHelper.Icon="&#xe9a5;">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock TextAlignment="Center" Text="{Binding Language}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <Button Content="翻 译"
+                                silver:ButtonHelper.Icon="&#xe9dd;"
+                                silver:IconHelper.Margin="0,0,20,0"
+                                Padding="0,0,10,0"
+                                Foreground="{DynamicResource ThemeFontBrush}"
+                                Margin="25,0,0,0"
+                                FontSize="15"
+                                Width="120"
+                                silver:ButtonHelper.CornerRadius="14"
+                                Style="{DynamicResource MainTransparentButtonStyle}"/>
+
+                </WrapPanel>
+                <ContentControl x:Name="DropDownRichTextBox" Margin="20"/>
+            </DockPanel>
+        </Grid>
+    </Border>
+</UserControl>

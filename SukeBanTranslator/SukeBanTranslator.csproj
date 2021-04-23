@@ -50,8 +50,8 @@
     <Reference Include="Panuon.UI.Core, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Panuon.UI.Core.2.2.1\lib\net45\Panuon.UI.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Panuon.UI.Silver, Version=2.2.5.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Panuon.UI.Silver.2.2.5.1-alpha\lib\net45\Panuon.UI.Silver.dll</HintPath>
+    <Reference Include="Panuon.UI.Silver, Version=2.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Panuon.UI.Silver.2.2.7-alpha\lib\net45\Panuon.UI.Silver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -101,24 +101,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Constractrs\IPageControlViewModel.cs" />
+    <Compile Include="Constractrs\IChildViewModel.cs" />
     <Compile Include="Constractrs\ISubViewModel.cs" />
-    <Compile Include="CustomControl\DropDownRichTextBox.xaml.cs">
-      <DependentUpon>DropDownRichTextBox.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="CustomControl\ViewModels\DropDownRichTextBoxViewModel.cs" />
+    <Compile Include="Models\Abstracts\ChildViewModelBase.cs" />
     <Compile Include="Models\Abstracts\SubViewModelBase.cs" />
-    <Compile Include="ViewModels\AggregatePictureTranslationViewModel.cs" />
-    <Compile Include="ViewModels\AggregateTranslationDicViewModel.cs" />
-    <Compile Include="ViewModels\AggregateTranslationViewModel.cs" />
+    <Compile Include="ViewModels\ChildViewModels\AggregatePictureTranslationViewModel.cs" />
+    <Compile Include="ViewModels\ChildViewModels\AggregateTranslationDicViewModel.cs" />
+    <Compile Include="ViewModels\ChildViewModels\AggregateTranslationViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="ViewModels\TranslationResultPanelViewModel.cs" />
-    <Compile Include="Views\TranslationResultPanelView.xaml.cs">
-      <DependentUpon>TranslationResultPanelView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModels\SubViewModels\ATMainInputViewModel.cs" />
+    <Compile Include="ViewModels\SubViewModels\TranslationResultPanelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\AppBootstrapper.cs" />
-    <Compile Include="Constractrs\IViewModel.cs" />
-    <Compile Include="Models\Abstracts\ViewModelBase.cs" />
+    <Compile Include="Constractrs\IShellViewModel.cs" />
+    <Compile Include="Models\Abstracts\ShellViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -173,19 +171,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CustomControl\DropDownRichTextBox.xaml">
+    <Page Include="CustomControl\Views\DropDownRichTextBoxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AggregatePictureTranslationView.xaml">
+    <Page Include="Views\ChildViews\AggregatePictureTranslationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AggregateTranslationDicView.xaml">
+    <Page Include="Views\ChildViews\AggregateTranslationDicView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AggregateTranslationView.xaml">
+    <Page Include="Views\ChildViews\AggregateTranslationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,7 +191,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TranslationResultPanelView.xaml">
+    <Page Include="Views\SubViews\ATMainInputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubViews\TranslationResultPanelView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
