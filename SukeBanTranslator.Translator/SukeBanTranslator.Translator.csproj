@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constractrs\ITranslator.cs" />
-    <Compile Include="Constractrs\ITranslatorEngine.cs" />
+    <Compile Include="Contracts\ITranslator.cs" />
+    <Compile Include="Contracts\ITranslatorEngine.cs" />
     <Compile Include="Implements\TranslatorEngineImpl.cs" />
     <Compile Include="Models\BaiduTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

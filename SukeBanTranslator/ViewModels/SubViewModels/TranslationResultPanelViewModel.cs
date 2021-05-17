@@ -1,6 +1,11 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.ComponentModel.Composition;
 using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using Caliburn.Micro;
+using Panuon.UI.Silver;
 using SukeBanTranslator.CustomControl.ViewModels;
 using SukeBanTranslator.Models;
 
@@ -11,23 +16,17 @@ namespace SukeBanTranslator.ViewModels
     {
         public TranslationResultPanelViewModel()
         {
-            //Items.Add(IoC.Get<IPageControlViewModel>());
-            //DropDownRichTextBox = Items.FirstOrDefault(x => x is DropDownRichTextBoxViewModel);
+            PageControl = IoC.GetAll<IPageControlViewModel>().FirstOrDefault(x => x is ResultBorderViewModel);
+        }
+        private IPageControlViewModel _PageControl;
+
+        public IPageControlViewModel PageControl
+        {
+            get { return _PageControl; }
+            set { _PageControl = value; NotifyOfPropertyChange(() => PageControl); }
         }
 
-        private IPageControlViewModel _DropDownRichTextBox;
-        /// <summary>
-        /// 下沉式富文本框
-        /// </summary>
-        public IPageControlViewModel DropDownRichTextBox
-        {
-            get { return _DropDownRichTextBox; ; }
-            set
-            {
-                _DropDownRichTextBox = value;
-                NotifyOfPropertyChange(() => DropDownRichTextBox);
-            }
-        }
+
 
     }
 }

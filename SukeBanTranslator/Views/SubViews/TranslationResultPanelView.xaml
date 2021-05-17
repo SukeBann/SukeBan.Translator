@@ -21,10 +21,11 @@
                               Style="{DynamicResource TransparentComboBoxStyle}"/>
                     <WrapPanel  HorizontalAlignment="Right">
                         <pu:Switch BoxWidth="48"
-                                   BorderThickness="0"
+                                   BorderThickness="1"
                                    CheckedBorderThickness="0"
+                                   BorderBrush="White"
                                    CheckedBackground="{DynamicResource IconActiveBrush}"
-                                   Background="{DynamicResource IconBaseBrush}"/>
+                                   Background="{DynamicResource SubBackGroundBrush}"/>
                         <Label Content="双语对照" 
                                Margin="0,0,50,0"
                                FontFamily="YaHei"
@@ -45,75 +46,12 @@
 
                 </Grid>
                 <ContentControl x:Name="DropDownRichTextBox"/>
-                <!--<Border Margin="0,20,0,8" 
+                <Border Margin="0,20,0,8" 
                         CornerRadius="24"
                         Padding="10"
                         Background="{DynamicResource DropDownImageBrush}">
-                    <ListBox pu:ListBoxHelper.ItemsMargin="10" 
-                             pu:ScrollViewerHelper.ScrollBarThickness="4"
-                             BorderThickness="0">
-                        <ListBoxItem>
-                            <ListBoxItem.Template>
-                                <ControlTemplate>
-                                    <Border Height="150" 
-                                            Background="{DynamicResource MainBackGroundBrush}"
-                                            CornerRadius="12">
-                                        <Border.Effect>
-                                            <DropShadowEffect Color="{DynamicResource ThemeColor}" 
-                                                              Direction="230" 
-                                                              BlurRadius="10"/>
-                                        </Border.Effect>
-                                    </Border>
-                                </ControlTemplate>
-                            </ListBoxItem.Template>
-                        </ListBoxItem>
-                        <ListBoxItem>
-                            <ListBoxItem.Template>
-                                <ControlTemplate>
-                                    <Border Height="150" 
-                                            Background="{DynamicResource MainBackGroundBrush}"
-                                            CornerRadius="12">
-                                        <Border.Effect>
-                                            <DropShadowEffect Color="{DynamicResource ThemeColor}" 
-                                                              Direction="230" 
-                                                              BlurRadius="10"/>
-                                        </Border.Effect>
-                                    </Border>
-                                </ControlTemplate>
-                            </ListBoxItem.Template>
-                        </ListBoxItem>
-                        <ListBoxItem>
-                            <ListBoxItem.Template>
-                                <ControlTemplate>
-                                    <Border Height="150" 
-                                            Background="{DynamicResource MainBackGroundBrush}"
-                                            CornerRadius="12">
-                                        <Border.Effect>
-                                            <DropShadowEffect Color="{DynamicResource ThemeColor}" 
-                                                              Direction="230" 
-                                                              BlurRadius="10"/>
-                                        </Border.Effect>
-                                    </Border>
-                                </ControlTemplate>
-                            </ListBoxItem.Template>
-                        </ListBoxItem>
-                        <ListBoxItem>
-                            <ListBoxItem.Template>
-                                <ControlTemplate>
-                                    <Border Height="150" 
-                                            Background="{DynamicResource MainBackGroundBrush}"
-                                            CornerRadius="12">
-                                        <Border.Effect>
-                                            <DropShadowEffect Color="{DynamicResource ThemeColor}" 
-                                                              Direction="230" 
-                                                              BlurRadius="10"/>
-                                        </Border.Effect>
-                                    </Border>
-                                </ControlTemplate>
-                            </ListBoxItem.Template>
-                        </ListBoxItem>
-                    </ListBox>
-                </Border>-->
+                    <ContentControl VerticalAlignment="Top" x:Name="PageControl"/>
+                </Border>
             </DockPanel>
         </Grid>
 

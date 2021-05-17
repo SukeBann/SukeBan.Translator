@@ -23,7 +23,7 @@ namespace SukeBanTranslator.ViewModels
 
         public IPageControlViewModel DropDownRichTextBox
         {
-            get { return _DropDownRichTextBox; }
+            get => _DropDownRichTextBox;
             set { _DropDownRichTextBox = value; NotifyOfPropertyChange(()=> DropDownRichTextBox); }
         }
 

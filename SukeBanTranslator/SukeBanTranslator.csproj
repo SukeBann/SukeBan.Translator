@@ -50,8 +50,8 @@
     <Reference Include="Panuon.UI.Core, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Panuon.UI.Core.2.2.1\lib\net45\Panuon.UI.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Panuon.UI.Silver, Version=2.2.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Panuon.UI.Silver.2.2.7-alpha\lib\net45\Panuon.UI.Silver.dll</HintPath>
+    <Reference Include="Panuon.UI.Silver, Version=2.2.8.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Panuon.UI.Silver.2.2.8.1-alpha\lib\net45\Panuon.UI.Silver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -100,10 +100,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Constractrs\IPageControlViewModel.cs" />
-    <Compile Include="Constractrs\IChildViewModel.cs" />
-    <Compile Include="Constractrs\ISubViewModel.cs" />
+    <Compile Include="Contracts\IPageControlViewModel.cs" />
+    <Compile Include="Contracts\IChildViewModel.cs" />
+    <Compile Include="Contracts\ISubViewModel.cs" />
     <Compile Include="CustomControl\ViewModels\DropDownRichTextBoxViewModel.cs" />
+    <Compile Include="CustomControl\ViewModels\ResultBorderViewModel.cs" />
     <Compile Include="Models\Abstracts\ChildViewModelBase.cs" />
     <Compile Include="Models\Abstracts\SubViewModelBase.cs" />
     <Compile Include="ViewModels\ChildViewModels\AggregatePictureTranslationViewModel.cs" />
@@ -115,7 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\AppBootstrapper.cs" />
-    <Compile Include="Constractrs\IShellViewModel.cs" />
+    <Compile Include="Contracts\IShellViewModel.cs" />
     <Compile Include="Models\Abstracts\ShellViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -175,6 +176,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CustomControl\Views\ResultBorderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ChildViews\AggregatePictureTranslationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -201,7 +206,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\InputBorder.png" />
+    <Resource Include="Resources\BaiduIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

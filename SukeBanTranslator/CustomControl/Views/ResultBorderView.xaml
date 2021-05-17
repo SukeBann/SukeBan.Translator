@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="SukeBanTranslator.CustomControl.Views.ResultBorderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SukeBanTranslator.CustomControl.Views"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+             mc:Ignorable="d" >
+
+    <Border CornerRadius="12"
+            Height="200"
+            Width="440"
+            Padding="5"
+            Background="{DynamicResource MainBackGroundBrush}">
+        <Border.Effect>
+            <DropShadowEffect Color="{DynamicResource ThemeColor}" 
+                              Direction="230" 
+                              BlurRadius="10"/>
+        </Border.Effect>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock Text="&#xe9b9;"
+                           FontSize="18"
+                           Margin="0,0,10,0"
+                           Foreground="{DynamicResource IconActiveBrush}"
+                           DockPanel.Dock="Left"
+                           FontFamily="{StaticResource PanuonIconFont}"/>
+                <ToggleButton DockPanel.Dock="Right" 
+                              IsChecked="{Binding Path=Checked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              Content="&#xe904;"
+                              FontSize="18"
+                              BorderThickness="0"
+                              Background="Transparent"
+                              Tag="{Binding TempTag,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              pu:ToggleButtonHelper.CheckedForeground="{DynamicResource IconActiveBrush}"
+                              pu:ToggleButtonHelper.CheckedContent="&#xe907;"
+                              FontFamily="{StaticResource PanuonIconFont}"
+                              Foreground="{DynamicResource IconBaseBrush}">
+                    <ToggleButton.Style>
+                        <Style TargetType="ToggleButton"
+                               BasedOn="{StaticResource {x:Type ToggleButton}}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=Self},Path=IsChecked}" Value="False">
+                                    <Setter Property="Tag"
+                                            Value="Shrink"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ToggleButton.Style>
+                </ToggleButton>
+                <TextBlock Text="百度翻译"
+                           Foreground="{DynamicResource ThemeFontBrush}"
+                           FontSize="15"/>
+            </DockPanel>
+            <Line DockPanel.Dock="Top" 
+                  Margin="0,10,0,10"
+                  X1="0"
+                  X2="440" 
+                  Stroke="White" 
+                  StrokeThickness="2"/>
+            <StackPanel Margin="0,0,9,0">
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock Text="&#xe9d9;" 
+                               Margin="2,0,2,0"
+                               FontFamily="{StaticResource PanuonIconFont}"></TextBlock>
+                    <TextBlock FontSize="13"
+                               TextWrapping="NoWrap">
+                        <!--<TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="{DynamicResource ThemeFontColor}" Offset="0"/>
+                                <GradientStop Color="{DynamicResource ThemeFontColor}" Offset="0.1"/>
+                                <GradientStop Color="{DynamicResource ThemeColor}" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>-->
+                        <TextBlock.Background>
+                            <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="1,0.5">
+                                <GradientStop Color="Red" Offset="0"/>
+                                <GradientStop Color="Transparent" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Background>
+                        内存泄漏的地址、大小和数据信息很难对我们的定位起到有效地帮助，但是如果我们能够让程序停在分配有泄漏的内存的地方，然后根据调用堆栈（Call Stack）里的信息，就可以很方便的定位是哪个语句出现问题。幸运的是，VC的C运行库（C run-time library）为我们提供了一个这样的函数：CrtSetBreakAlloc，声明如下： 
+
+                        long _CrtSetBreakAlloc(  long lBreakAlloc );
+
+                        其中参数lBreakAlloc即为内存分配号（花括号中的数字）。我们只要在程序初始化函数中添加语句：_CrtSetBreakAlloc(858)就可以使程序在Debug F5运行时自动断点到我们想要的位置。
+
+                        使用这个函数进行内存泄漏定位有个条件，即发生内存泄漏的分配号是固定的，每次
+                        
+                        启动程序不会随机变化。 
+
+                        但是如果我们的程序比较大，内存泄漏也不止一个，用上面的方法调试可能会很麻烦，需要经常更新代码并重新编译程序。还有更好的方法。
+
+                        ————————————————
+
+                        版权声明：本文为CSDN博主「xsophiax」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+
+                        原文链接：https://blog.csdn.net/xsophiax/article/details/88892189
+                    </TextBlock>
+                </DockPanel>
+                <DockPanel Margin="0,5,0,0">
+                    <TextBlock Text="&#xe9d9;" 
+                               Margin="2,0,2,0"
+                               FontFamily="{StaticResource PanuonIconFont}"/>
+                    <TextBlock Foreground="{DynamicResource ThemeFontBrush}"
+                               FontSize="13"
+                               TextWrapping="Wrap" >The location, size, and data of the memory leak is difficult to locate, but if we can get the program to stop where it is allocated, and then, based on the information in the Call Stack, you can easily locate which statement is the problem. Fortunately, the VC’s C run-time library provides us with a function called CrtSetBreakAlloc, which declares:
+
+                    Long (Long lBreakAlloc) ;
+
+                    Where the parameter, lBreakAlloc, is the memory allocation number (a number in curly braces) . We simply add the statement: (858) to the program initialization function to cause the program to automatically break in the desired location when Debug F5 runs.
+
+                    Use this function to locate memory leaks with the proviso that the allocation number for memory leaks is fixed and does not change randomly each time the boot process is started.
+
+                    But if our program is large and there is more than one memory leak, debugging in this way can be cumbersome, requiring frequent code updates and recompilation of the program. There’s a better way.
+
+                    Use this function to locate memory leaks with the proviso that the allocation number for memory leaks is fixed and does not change randomly each time the boot process is started.
+
+                    But if our program is large and there is more than one memory leak, debugging in this way can be cumbersome, requiring frequent code updates and recompilation of the program. There’s a better way.
+
+                    -----
+                    
+                    Where the parameter, lBreakAlloc, is the memory allocation number (a number in curly braces) . We simply add the statement: (858) to the program initialization function to cause the program to automatically break in the desired location when Debug F5 runs.
+
+                    Use this function to locate memory leaks with the proviso that the allocation number for memory leaks is fixed and does not change randomly each time the boot process is started.
+
+                    But if our program is large and there is more than one memory leak, 
+                    
+                    Where the parameter, lBreakAlloc, is the memory allocation number (a number in curly braces) . We simply add the statement: (858) to the program initialization function to cause the program to automatically break in the desired location when Debug F5 runs.
+
+                    Use this function to locate memory leaks with the proviso that the allocation number for memory leaks is fixed and does not change randomly each time the boot process is started.
+
+                    But if our program is large and there is more than one memory leak, 
+
+                    -----
+
+                    Copyright Notice: This is an original article by CSDN blogger xsophiax under the CC 4.0 BY-SA copyright agreement. Please attach a link to the original text and this notice.
+
+                    Https://blog.csdn.net/xsophiax/article/details/88892189</TextBlock>
+                </DockPanel>
+                
+            </StackPanel>
+            
+        </DockPanel>
+    </Border>
+  
+</UserControl>

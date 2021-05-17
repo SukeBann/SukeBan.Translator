@@ -58,7 +58,7 @@ namespace SukeBanTranslator.ViewModels
         /// </summary>
         public string GridLoadingTag
         {
-            get { return _GridLoadingTag; }
+            get => _GridLoadingTag;
             set { _GridLoadingTag = value; NotifyOfPropertyChange(() => GridLoadingTag); }
         }
 

@@ -7,7 +7,7 @@ namespace SukeBanTranslator.Shared
     {
         #region Fields
 
-        private const string _appDataPath = "%appdata%\\Panuon\\Panuon Setup";
+        private const string _appDataPath = "%appdata%\\SukeBanTranslator\\Cache";
 
         #endregion Fields
 

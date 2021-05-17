@@ -21,7 +21,7 @@ namespace SukeBanTranslator.Models
         /// 获取日志输入器
         /// </summary>
         public ILogger Logger => IoC.Get<ILogger>();
-
+        
         #endregion Properties
     }
 }

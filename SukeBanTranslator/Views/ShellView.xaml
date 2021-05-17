@@ -6,6 +6,7 @@
             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
             xmlns:cal="http://www.caliburnproject.org"
             mc:Ignorable="d"
+            
             WindowStartupLocation="CenterScreen"
             Style="{DynamicResource ChromeWindowXStyle}">
 
@@ -63,8 +64,6 @@
                     Value="0"/>
             <Setter Property="pu:ListBoxHelper.ItemsSelectedBackground"
                     Value="Transparent"/>
-            <Setter Property="pu:ListBoxHelper.ItemsHorizontalContentAlignment"
-                    Value="Left"/>
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate>

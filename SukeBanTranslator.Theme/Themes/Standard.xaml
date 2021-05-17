@@ -6,7 +6,9 @@
 
     <Color x:Key="ThemeColor">#2A2A41</Color>
     <Color x:Key="MenuColor">#2E2E48</Color>
+
     <Color x:Key="MainBackGroundColor">#2D2E4A</Color>
+    <Color x:Key="SubBackGroundColor">#3A3660</Color>
 
     <Color x:Key="MenuActiveItemColor">#363654</Color>
     <Color x:Key="MenuActiceItemHeaderColor">#63638B</Color>
@@ -27,6 +29,9 @@
 
     <SolidColorBrush x:Key="MainBackGroundBrush"
                      Color="{StaticResource MainBackGroundColor}"/>
+
+    <SolidColorBrush x:Key="SubBackGroundBrush"
+                     Color="{StaticResource SubBackGroundColor}"/>
 
     <SolidColorBrush x:Key="IconBaseBrush"
                      Color="{StaticResource IconBaseColor}"/>

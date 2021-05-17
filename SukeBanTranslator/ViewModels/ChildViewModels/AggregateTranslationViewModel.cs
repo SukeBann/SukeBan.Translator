@@ -27,7 +27,7 @@ namespace SukeBanTranslator.ViewModels
         /// </summary>
         public ISubViewModel ATMainInput
         {
-            get { return _ATMainInput;}
+            get => _ATMainInput;
             set
             {
                 _ATMainInput = value; 
@@ -41,7 +41,7 @@ namespace SukeBanTranslator.ViewModels
         /// </summary>
         public ISubViewModel TranslationResultPanel
         {
-            get { return _TranslationResultPanel; ; }
+            get => _TranslationResultPanel;
             set
             {
                 _TranslationResultPanel = value; 
