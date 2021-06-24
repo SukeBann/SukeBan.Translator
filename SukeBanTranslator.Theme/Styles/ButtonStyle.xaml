@@ -11,6 +11,8 @@
            BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="pu:IconHelper.FontFamily"
                 Value="{StaticResource PanuonIconFont}"/>
+        <Setter Property="pu:IconHelper.Margin"
+                Value="0" />
     </Style>
 
     <Style x:Key="MainTransparentButtonStyle"
@@ -31,4 +33,28 @@
         <Setter Property="pu:ButtonHelper.HoverForeground"
                 Value="{DynamicResource IconActiveBrush}"/>
     </Style>
+
+    <Style x:Key="IconContentButtonStyle"
+           TargetType="Button"
+           BasedOn="{StaticResource ButtonIconBaseStyle}">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="1.5" />
+        <Setter Property="FontSize"
+                Value="18"/>
+        <Setter Property="FontFamily"
+                Value="{StaticResource PanuonIconFont}"/>
+        <Setter Property="pu:ButtonHelper.CornerRadius"
+                Value="19" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource IconActiveBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource ButtonBorderBrush}" />
+        <Setter Property="pu:ButtonHelper.HoverBackground"
+                Value="{DynamicResource ButtonHoverBackGroundBrush}" />
+        <Setter Property="pu:ButtonHelper.HoverForeground"
+                Value="{DynamicResource IconActiveBrush}" />
+    </Style>
+
 </ResourceDictionary>

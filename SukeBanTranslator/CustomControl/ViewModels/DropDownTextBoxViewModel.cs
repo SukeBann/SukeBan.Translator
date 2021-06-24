@@ -6,7 +6,7 @@ using Caliburn.Micro;
 namespace SukeBanTranslator.CustomControl.ViewModels
 {
     [Export(typeof(IPageControlViewModel))]
-    public class DropDownRichTextBoxViewModel:Screen,IPageControlViewModel
+    public class DropDownTextBoxViewModel:Screen,IPageControlViewModel
     {
 
     }

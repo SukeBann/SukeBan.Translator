@@ -103,7 +103,7 @@
     <Compile Include="Contracts\IPageControlViewModel.cs" />
     <Compile Include="Contracts\IChildViewModel.cs" />
     <Compile Include="Contracts\ISubViewModel.cs" />
-    <Compile Include="CustomControl\ViewModels\DropDownRichTextBoxViewModel.cs" />
+    <Compile Include="CustomControl\ViewModels\DropDownTextBoxViewModel.cs" />
     <Compile Include="CustomControl\ViewModels\ResultBorderViewModel.cs" />
     <Compile Include="Models\Abstracts\ChildViewModelBase.cs" />
     <Compile Include="Models\Abstracts\SubViewModelBase.cs" />
@@ -172,7 +172,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CustomControl\Views\DropDownRichTextBoxView.xaml">
+    <Page Include="CustomControl\Views\DropDownTextBoxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

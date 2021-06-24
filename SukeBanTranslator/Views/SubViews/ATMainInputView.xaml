@@ -27,28 +27,25 @@
                         <TextBlock Foreground="#74749F"
                                    Text="Version | v.0.1.0"/>
                         <Button x:Name="Setting"
-                                    pu:ButtonHelper.Icon="&#xe98f;"
-                                    pu:IconHelper.FontSize="18"
-                                    Padding="4,0,0,0"
-                                    Margin="0,0,14,0"
-                                    Width="40"
-                                    Height="40"
-                                    pu:ButtonHelper.CornerRadius="12"
-                                    HorizontalAlignment="Right" 
-                                    Style="{DynamicResource MainTransparentButtonStyle}"/>
+                                Content="&#xe98f;"
+                                Margin="0,0,14,0"
+                                Width="40"
+                                Height="40"
+                                pu:ButtonHelper.CornerRadius="12"
+                                HorizontalAlignment="Right"
+                                Style="{DynamicResource IconContentButtonStyle}"/>
                     </Grid>
 
                     <DockPanel Margin="20,10,0,0"
                                    VerticalAlignment="Stretch"
                                    HorizontalAlignment="Left">
                         <Button x:Name="Button"
-                                    pu:ButtonHelper.Icon="&#xe951;"
-                                    pu:IconHelper.FontSize="28"
-                                    Padding="3,0,0,0"
-                                    Style="{DynamicResource MainTransparentButtonStyle}"
-                                    FontSize="26"
-                                    Height="60"
-                                    Width="60">
+                                Content="&#xe951;"
+                                FontSize="28"
+                                Padding="0,0,1.5,0"
+                                Style="{DynamicResource IconContentButtonStyle}"
+                                Height="60"
+                                Width="60">
                         </Button>
                         <TextBlock Text="History"
                                        Margin="10,0,0,0"
@@ -94,8 +91,8 @@
 
                     <Button Content="翻 译"
                                 pu:ButtonHelper.Icon="&#xe9dd;"
-                                pu:IconHelper.Margin="0,0,20,0"
-                                Padding="0,0,10,0"
+                                pu:IconHelper.Margin="0,0,10,0"
+                                Padding="10,0"
                                 Foreground="{DynamicResource ThemeFontBrush}"
                                 Margin="25,0,0,0"
                                 FontSize="15"

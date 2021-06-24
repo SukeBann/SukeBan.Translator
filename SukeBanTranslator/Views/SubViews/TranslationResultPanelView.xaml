@@ -16,41 +16,48 @@
         <Grid>
             <DockPanel>
                 <Grid DockPanel.Dock="Top">
-                    <ComboBox x:Name="TransMode" 
+                    <!--<ComboBox x:Name="TransMode" 
                               HorizontalAlignment="Left"
-                              Style="{DynamicResource TransparentComboBoxStyle}"/>
-                    <WrapPanel  HorizontalAlignment="Right">
+                              Style="{DynamicResource TransparentComboBoxStyle}"/>-->
+                    <WrapPanel  HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center">
                         <pu:Switch BoxWidth="48"
                                    BorderThickness="1"
                                    CheckedBorderThickness="0"
                                    BorderBrush="White"
                                    CheckedBackground="{DynamicResource IconActiveBrush}"
-                                   Background="{DynamicResource SubBackGroundBrush}"/>
-                        <Label Content="双语对照" 
+                                   Background="{DynamicResource SubBackGroundBrush}" />
+                        <Label Content="双语对照"
                                Margin="0,0,50,0"
                                FontFamily="YaHei"
                                Foreground="{DynamicResource ThemeFontBrush}"
                                FontSize="15"
                                Background="Transparent"
-                               VerticalAlignment="Center"/>
-                        <Button x:Name="Record"
-                                Width="40"
-                                Height="40"
-                                Padding="4,0,0,0"
-                                Margin="0,0,30,0"
-                                pu:IconHelper.FontSize="18"
-                                pu:ButtonHelper.Icon="&#xe9a8;"
-                                pu:ButtonHelper.CornerRadius="18" 
-                                Style="{DynamicResource MainTransparentButtonStyle}"/>
+                               VerticalAlignment="Center" />
                     </WrapPanel>
+                    <Button x:Name="Record"
+                            HorizontalAlignment="Right"
+                            Width="40"
+                            Height="40"
+                            Margin="0,0,30,0"
+                            pu:IconHelper.FontSize="18"
+                            Content="&#xe9a8;"
+                            pu:ButtonHelper.CornerRadius="18"
+                            Style="{DynamicResource IconContentButtonStyle}" />
 
                 </Grid>
                 <ContentControl x:Name="DropDownRichTextBox"/>
-                <Border Margin="0,20,0,8" 
+                <Border Margin="0,10,0,0" 
                         CornerRadius="24"
                         Padding="10"
                         Background="{DynamicResource DropDownImageBrush}">
-                    <ContentControl VerticalAlignment="Top" x:Name="PageControl"/>
+                    <ListBox x:Name="Items"
+                              BorderThickness="0"
+                              Background="Transparent"
+                              pu:ListBoxHelper.ItemsMargin="0,2.5"
+                              pu:ListBoxHelper.ItemsHoverBackground="Transparent"
+                              pu:ListBoxHelper.ItemsSelectedBackground="Transparent"
+                              VerticalAlignment="Top"/>
                 </Border>
             </DockPanel>
         </Grid>

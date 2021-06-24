@@ -16,17 +16,11 @@ namespace SukeBanTranslator.ViewModels
     {
         public TranslationResultPanelViewModel()
         {
-            PageControl = IoC.GetAll<IPageControlViewModel>().FirstOrDefault(x => x is ResultBorderViewModel);
+            for (int i = 0; i < 10; i++)
+            {
+              Items.Add(new ResultBorderViewModel());
+            }
         }
-        private IPageControlViewModel _PageControl;
-
-        public IPageControlViewModel PageControl
-        {
-            get { return _PageControl; }
-            set { _PageControl = value; NotifyOfPropertyChange(() => PageControl); }
-        }
-
-
 
     }
 }

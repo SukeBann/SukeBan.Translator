@@ -29,7 +29,7 @@ namespace SukeBanTranslator.ViewModels
 
         protected override void OnActivate()
         {
-            DropDownRichTextBox = Items.FirstOrDefault(x => x is DropDownRichTextBoxViewModel);
+            DropDownRichTextBox = Items.FirstOrDefault(x => x is DropDownTextBoxViewModel);
             base.OnActivate();
         }
 
