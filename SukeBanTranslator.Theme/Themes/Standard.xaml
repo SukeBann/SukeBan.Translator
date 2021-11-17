@@ -3,7 +3,11 @@
 
     <ImageBrush x:Key="DropDownImageBrush"
                 ImageSource="../Resources/InputBorder.png"/>
-
+    
+    <Color x:Key="PinkColor">#2A2A41</Color>
+    <Color x:Key="PinkTwoColor">#2E2E48</Color>
+   
+   
     <Color x:Key="ThemeColor">#2A2A41</Color>
     <Color x:Key="MenuColor">#2E2E48</Color>
 
