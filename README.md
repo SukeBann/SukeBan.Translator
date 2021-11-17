@@ -2,6 +2,7 @@
 #### A WPF client translation software that aggregates the results of various translation engines
 #### 一个集成了百度，有道，彩云，搜狗，腾讯等翻译API的桌面端聚合翻译程序
 
+----
 
 ### How to begin
 ### 怎么开始
@@ -15,6 +16,7 @@
 #### 3. 使用jetbrains'rider 或 visual studio 构建应用
 #### 3. use jetbrains'rider or visual studiobuild this application
 
+----
 
 ### How to Contribute
 ### 如何进行贡献
