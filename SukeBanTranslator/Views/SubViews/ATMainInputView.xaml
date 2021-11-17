@@ -88,6 +88,17 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+                  
+                    <Button Content="翻 译"
+                                pu:ButtonHelper.Icon="&#xe9dd;"
+                                pu:IconHelper.Margin="0,0,10,0"
+                                Padding="10,0"
+                                Foreground="{DynamicResource ThemeFontBrush}"
+                                Margin="25,0,0,0"
+                                FontSize="15"
+                                Width="120"
+                                pu:ButtonHelper.CornerRadius="14"
+                                Style="{DynamicResource MainTransparentButtonStyle}"/>
 
                     <Button Content="翻 译"
                                 pu:ButtonHelper.Icon="&#xe9dd;"
